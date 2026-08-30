@@ -1,0 +1,213 @@
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import {
+  MapPin,
+  Phone,
+  Clock,
+  Car,
+  Copy,
+  Check,
+  Navigation,
+  ExternalLink,
+  ShieldCheck,
+  Sparkles,
+} from 'lucide-react';
+import { STORE_INFO, IMAGES } from '../data/cafeData';
+
+export const LocationSection: React.FC = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyAddress = () => {
+    navigator.clipboard.writeText(STORE_INFO.address);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  const encodedAddress = encodeURIComponent(STORE_INFO.address);
+  const encodedName = encodeURIComponent('카페 파라다이스');
+
+  const navLinks = [
+    {
+      name: '카카오내비 / 카카오맵',
+      url: `https://map.kakao.com/link/search/${encodedAddress}`,
+      color: 'bg-yellow-400 text-stone-900 hover:bg-yellow-300',
+    },
+    {
+      name: '네이버 지도',
+      url: `https://map.naver.com/v5/search/${encodedAddress}`,
+      color: 'bg-emerald-600 text-white hover:bg-emerald-500',
+    },
+    {
+      name: '티맵 (TMAP)',
+      url: `https://tmap.life/search?q=${encodedAddress}`,
+      color: 'bg-blue-600 text-white hover:bg-blue-500',
+    },
+  ];
+
+  return (
+    <section id="location" className="py-20 bg-stone-950 text-white relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">
+            <MapPin className="w-3.5 h-3.5" />
+            <span>Location & Contact</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-serif">
+            카페 파라다이스 <span className="text-amber-400">오시는 길 & 매장 정보</span>
+          </h2>
+          <p className="text-stone-300 text-sm sm:text-base mt-2">
+            전남 영광 백수해안도로를 따라 시원하게 달리시다가 바다가 가장 아름답게 보이는 자갈마당으로 들어오시면 됩니다.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          {/* Left: Map Preview & Visual Road Card */}
+          <div className="lg:col-span-6 bg-stone-900/90 border border-stone-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl">
+            <div>
+              {/* Visual Map / Hero Thumbnail */}
+              <div className="w-full h-64 sm:h-72 rounded-2xl overflow-hidden relative border border-stone-700 mb-6 bg-stone-950">
+                <img
+                  src={IMAGES.heroSunset}
+                  alt="카페 파라다이스 위치 전경"
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
+                
+                {/* Map Pin Overlay */}
+                <div className="absolute bottom-4 left-4 right-4 bg-stone-900/90 backdrop-blur-md p-3.5 rounded-xl border border-stone-700 flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-amber-500 text-stone-950 flex items-center justify-center font-bold">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-sm text-white">{STORE_INFO.name}</div>
+                      <div className="text-xs text-stone-400">{STORE_INFO.address}</div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={handleCopyAddress}
+                    className="px-2.5 py-1.5 bg-stone-800 hover:bg-stone-700 text-xs text-amber-400 font-bold rounded-lg border border-stone-700 flex items-center gap-1 shrink-0"
+                  >
+                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                    <span>{copied ? '복사됨' : '주소복사'}</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Landmark Distances */}
+              <div className="space-y-2 mb-6">
+                <div className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">
+                  주변 주요 명소와의 거리
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="p-2.5 bg-stone-800/80 rounded-xl border border-stone-700/60 flex justify-between">
+                    <span className="text-stone-300">영광노을전시관</span>
+                    <span className="font-bold text-amber-400">차량 3분</span>
+                  </div>
+                  <div className="p-2.5 bg-stone-800/80 rounded-xl border border-stone-700/60 flex justify-between">
+                    <span className="text-stone-300">백수해안도로 중심</span>
+                    <span className="font-bold text-amber-400">도로변 위치</span>
+                  </div>
+                  <div className="p-2.5 bg-stone-800/80 rounded-xl border border-stone-700/60 flex justify-between">
+                    <span className="text-stone-300">칠산타워·칠산대교</span>
+                    <span className="font-bold text-amber-400">차량 12분</span>
+                  </div>
+                  <div className="p-2.5 bg-stone-800/80 rounded-xl border border-stone-700/60 flex justify-between">
+                    <span className="text-stone-300">법성포 굴비거리</span>
+                    <span className="font-bold text-amber-400">차량 15분</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation App Launcher Buttons */}
+            <div>
+              <div className="text-xs text-stone-400 mb-2 font-medium">
+                원터치 내비게이션 길안내 연결:
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                {navLinks.map((link, idx) => (
+                  <a
+                    key={idx}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`py-2.5 px-3 rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition-transform hover:scale-102 ${link.color}`}
+                  >
+                    <Navigation className="w-3.5 h-3.5" />
+                    <span>{link.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Operational Details & Direct Call Card */}
+          <div className="lg:col-span-6 bg-stone-900/90 border border-stone-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl space-y-6">
+            <div className="space-y-5">
+              <div className="flex items-center justify-between">
+                <span className="px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-xs font-bold">
+                  상세 매장 정보
+                </span>
+                <span className="text-xs text-emerald-400 font-bold flex items-center gap-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  연중무휴 영업 중
+                </span>
+              </div>
+
+              {/* Info Items */}
+              <div className="space-y-4">
+                <div className="p-4 bg-stone-800/80 rounded-2xl border border-stone-700">
+                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
+                    <MapPin className="w-4 h-4" />
+                    <span>도로명 주소</span>
+                  </div>
+                  <p className="text-stone-200 text-sm">{STORE_INFO.address}</p>
+                  <p className="text-stone-400 text-xs mt-0.5">{STORE_INFO.addressDetail}</p>
+                </div>
+
+                <div className="p-4 bg-stone-800/80 rounded-2xl border border-stone-700">
+                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
+                    <Clock className="w-4 h-4" />
+                    <span>영업 시간</span>
+                  </div>
+                  <p className="text-stone-200 text-sm">{STORE_INFO.operatingHours}</p>
+                  <p className="text-stone-400 text-xs mt-0.5">{STORE_INFO.notice}</p>
+                </div>
+
+                <div className="p-4 bg-stone-800/80 rounded-2xl border border-stone-700">
+                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
+                    <Car className="w-4 h-4" />
+                    <span>주차 & 편의 시설</span>
+                  </div>
+                  <p className="text-stone-200 text-sm">{STORE_INFO.parkingInfo}</p>
+                  <p className="text-stone-400 text-xs mt-0.5">{STORE_INFO.restroomInfo}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Direct Call Section */}
+            <div className="p-5 bg-gradient-to-r from-amber-950/60 to-orange-950/60 border border-amber-500/40 rounded-2xl">
+              <div className="text-xs text-amber-300 font-medium mb-1">
+                자리 예약 문의 및 식사/디저트 사전 확인
+              </div>
+              <div className="text-lg sm:text-xl font-extrabold text-white mb-3">
+                {STORE_INFO.phone}
+              </div>
+              <a
+                id="location-direct-call-btn"
+                href={`tel:${STORE_INFO.phone}`}
+                className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-stone-950 font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition-transform hover:scale-102"
+              >
+                <Phone className="w-4 h-4" />
+                <span>매장 직통 전화 걸기 ({STORE_INFO.phone})</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
