@@ -2,5 +2,7 @@
   "name": "카페 파라다이스",
   "description": "전남 영광 백수해안도로 바다 노을 뷰 카페 & 해안 쉼터 파라다이스. 자갈마당 야외 파라솔 테라스, 엄마의 손맛 식사&안주, 시원한 캔맥주·과자·담배 완비, 특별한 수제 디저트.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -69,9 +69,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-stone-200 text-xs sm:text-base md:text-lg max-w-3xl mx-auto mb-8 font-light leading-relaxed drop-shadow-md space-y-1.5 break-keep"
         >
-          <span className="block">백수해안도로를 따라 달리다 만나는, 바다와 노을이 머무는 카페 파라다이스.</span>
-          <span className="block">넓은 자갈마당 파라솔과 루프탑 테라스에서 향긋한 커피와 정성 가득한 손맛을 즐겨보세요.</span>
-          <span className="block">붉게 물드는 서해의 노을과 함께, 잠시 쉬어가는 특별한 시간을 선물합니다.</span>
+          <span className="block">백수해안도로를 따라 달리다 만나는 바다와 노을이 머무는 카페 파라다이스.</span>
+          <span className="block">넓은 자갈마당과 파라솔, 루프탑 테라스에서 맛있는 음식과 향긋한 커피,</span>
+          <span className="block">붉게 물드는 서해의 노을과 함께 잠시 쉬어가는 특별한 시간을 선물합니다.</span>
         </motion.p>
 
         {/* Quick Highlights Grid */}
