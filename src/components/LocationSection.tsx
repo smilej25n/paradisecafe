@@ -198,11 +198,11 @@ export const LocationSection: React.FC = () => {
               </div>
               <a
                 id="location-direct-call-btn"
-                href={`tel:${STORE_INFO.phone}`}
+                href="tel:010-5167-3516"
                 className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-stone-950 font-extrabold rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition-transform hover:scale-102"
               >
                 <Phone className="w-4 h-4" />
-                <span>매장 직통 전화 걸기 ({STORE_INFO.phone})</span>
+                <span>예약 및 문의 (010-5167-3516)</span>
               </a>
             </div>
           </div>

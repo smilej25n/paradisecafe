@@ -97,7 +97,7 @@ export const KeyStrengths: React.FC<KeyStrengthsProps> = ({ onNavigateMenu }) =>
             <span className="text-amber-400">카페 파라다이스만의 4가지 매력</span>
           </h2>
           <p className="text-stone-300 text-sm sm:text-base mt-3">
-            단순한 카페를 넘어, 영광 해안도로를 달리는 모든 분들의 든든하고 아늑한 안식처가 되어드립니다.
+            영광의 바다와 노을을 따라 달리는 길, 잠시 머물러 마음까지 쉬어갈 수 있는 특별한 공간이 되어드립니다.
           </p>
         </div>
 

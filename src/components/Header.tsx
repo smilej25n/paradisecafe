@@ -170,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
           <div className="p-3 bg-stone-800/80 rounded-xl border border-stone-700 flex items-center justify-between text-xs text-stone-300">
             <div className="flex items-center gap-1.5">
               <MapPin className="w-4 h-4 text-amber-400" />
-              <span>영광군 백수해안도로 624</span>
+              <span>영광군 백수읍 백암리 60-1</span>
             </div>
             <button
               onClick={() => handleNavItemClick('location')}

@@ -16,8 +16,8 @@ export const IMAGES = {
 export const STORE_INFO: StoreInfo = {
   name: '카페 파라다이스',
   subName: 'CAFE & OCEAN LOUNGE PARADISE',
-  phone: '061-351-7890', // Yeonggwang area code 061
-  address: '전라남도 영광군 백수읍 백수해안도로 624',
+  phone: '061-352-3516', // Yeonggwang area code 061
+  address: '전라남도 영광군 백수읍 백암리 60-1 (파라다이스 편의점 카페)',
   addressDetail: '바다가 바로 내려다보이는 해안도로변 1층 단독건물 & 넓은 자갈마당',
   operatingHours: '매일 10:00 ~ 21:00 (일몰 시간에 따라 탄력적 연장 영업 / 연중무휴)',
   parkingInfo: '매장 전용 넓은 무료 주차장 완비 (대형 SUV 및 단체 방문 가능)',

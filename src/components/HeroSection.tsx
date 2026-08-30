@@ -45,7 +45,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </span>
           <span>전남 영광 백수해안도로 바다 바로 앞</span>
           <span className="text-amber-400/60">|</span>
-          <span className="text-white font-semibold">노을 & 오션뷰 1열 쉼터</span>
+          <span className="text-white font-semibold">노을 & 오션뷰 명당 쉼터</span>
         </motion.div>
 
         {/* Main Headline */}
