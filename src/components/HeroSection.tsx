@@ -67,11 +67,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-stone-200 text-sm sm:text-lg md:text-xl max-w-3xl mx-auto mb-8 font-light leading-relaxed drop-shadow-md"
+          className="text-stone-200 text-xs sm:text-base md:text-lg max-w-3xl mx-auto mb-8 font-light leading-relaxed drop-shadow-md space-y-1.5 break-keep"
         >
-          넓은 자갈마당 파라솔 벤치와 루프탑 테라스에서 마주하는 서해안 최고의 노을. <br className="hidden md:inline" />
-          향긋한 커피와 시원한 맥주, 엄마의 정성 가득한 손맛 요리, <br className="hidden md:inline" />
-          그리고 해안도로에서 귀한 편의점 스낵과 담배까지 모두 준비되어 있습니다.
+          <span className="block">백수해안도로를 따라 달리다 만나는, 바다와 노을이 머무는 카페 파라다이스.</span>
+          <span className="block">넓은 자갈마당 파라솔과 루프탑 테라스에서 향긋한 커피와 정성 가득한 손맛을 즐겨보세요.</span>
+          <span className="block">붉게 물드는 서해의 노을과 함께, 잠시 쉬어가는 특별한 시간을 선물합니다.</span>
         </motion.p>
 
         {/* Quick Highlights Grid */}
