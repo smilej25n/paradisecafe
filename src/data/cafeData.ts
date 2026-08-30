@@ -1,12 +1,16 @@
 import { MenuItem, Facility, DriveCourse, GuestReview, StoreInfo } from '../types';
 
-// Asset Images
+import heroSunset from '../assets/images/paradise_exact_real_hero_1788067718142.jpg';
+import homemadeFood from '../assets/images/paradise_homemade_food_1788065897549.jpg';
+import bakeryDessert from '../assets/images/paradise_bakery_dessert_1788065913166.jpg';
+import snackMart from '../assets/images/paradise_snack_mart_1788065926055.jpg';
+
 export const IMAGES = {
-  heroSunset: '/src/assets/images/paradise_exact_real_hero_1788067718142.jpg',
-  gravelTerrace: '/src/assets/images/paradise_exact_real_hero_1788067718142.jpg',
-  homemadeFood: '/src/assets/images/paradise_homemade_food_1788065897549.jpg',
-  bakeryDessert: '/src/assets/images/paradise_bakery_dessert_1788065913166.jpg',
-  snackMart: '/src/assets/images/paradise_snack_mart_1788065926055.jpg',
+  heroSunset,
+  gravelTerrace: heroSunset,
+  homemadeFood,
+  bakeryDessert,
+  snackMart,
 };
 
 export const STORE_INFO: StoreInfo = {
