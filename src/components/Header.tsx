@@ -132,7 +132,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
             className="flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-stone-950 rounded-lg text-xs sm:text-sm font-bold shadow-md shadow-amber-500/20 transition-all hover:scale-105"
           >
             <Phone className="w-3.5 h-3.5" />
-            <span>전화 문의</span>
+            <span>전화문의</span>
           </a>
 
           {/* Mobile Menu Hamburger */}
