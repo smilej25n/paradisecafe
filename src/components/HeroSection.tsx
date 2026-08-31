@@ -56,9 +56,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight font-serif break-keep"
         >
           <span className="block mb-1.5 sm:mb-2 text-stone-100">파도소리와 음악이 흐르는</span>
-          <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-orange-300 to-rose-300">
-            <span className="whitespace-nowrap">노을빛 바다 앞 쉼터,</span>{' '}
-            <span className="whitespace-nowrap">카페 파라다이스</span>
+          <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-orange-300 to-rose-300 break-keep">
+            <span>노을빛 바다 앞 쉼터,</span>{' '}
+            <span>카페 파라다이스</span>
           </span>
         </motion.h1>
 

@@ -52,7 +52,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-950 text-stone-100 font-sans selection:bg-amber-500 selection:text-stone-950">
+    <div className="min-h-screen bg-stone-950 text-stone-100 font-sans selection:bg-amber-500 selection:text-stone-950 overflow-x-hidden w-full max-w-full relative">
       {/* Fixed Header */}
       <Header
         onNavigate={scrollToSection}
@@ -60,7 +60,7 @@ export default function App() {
       />
 
       {/* Main Sections */}
-      <main>
+      <main className="overflow-x-hidden w-full max-w-full">
         <HeroSection
           onNavigate={scrollToSection}
           onOpenAudio={() => setIsAudioModalOpen(true)}

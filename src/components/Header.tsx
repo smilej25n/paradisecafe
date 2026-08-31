@@ -169,14 +169,14 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
             ))}
           </div>
 
-          <div className="p-3 bg-stone-800/80 rounded-xl border border-stone-700 flex items-center justify-between text-xs text-stone-300">
-            <div className="flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-amber-400" />
-              <span>영광군 백수읍 백암리 60-1</span>
+          <div className="p-3 bg-stone-800/80 rounded-xl border border-stone-700 flex items-center justify-between text-xs text-stone-300 gap-2">
+            <div className="flex items-center gap-1.5 min-w-0">
+              <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
+              <span className="truncate">{STORE_INFO.address}</span>
             </div>
             <button
               onClick={() => handleNavItemClick('location')}
-              className="text-amber-400 font-semibold underline"
+              className="text-amber-400 font-semibold underline shrink-0 whitespace-nowrap"
             >
               지도보기
             </button>
