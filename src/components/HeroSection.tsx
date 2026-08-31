@@ -74,29 +74,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <span className="block">붉게 물드는 서해의 노을과 함께 잠시 쉬어가는 특별한 시간을 선물합니다.</span>
         </motion.p>
 
-        {/* CTA Buttons - Horizontal side-by-side on both mobile & desktop */}
+        {/* CTA Buttons - Vertical column on mobile (centered), horizontal row on desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-row items-center justify-center gap-2 sm:gap-4 max-w-md sm:max-w-xl mx-auto mb-8 sm:mb-10 w-full"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-xl mx-auto mb-8 sm:mb-10 w-full"
         >
           <button
             id="hero-menu-cta"
             onClick={() => onNavigate('menu')}
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-stone-950 font-bold rounded-xl shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 text-xs sm:text-base cursor-pointer whitespace-nowrap"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-stone-950 font-bold rounded-xl shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base cursor-pointer whitespace-nowrap"
           >
-            <Utensils className="w-3.5 h-3.5 sm:w-4 h-4 shrink-0" />
-            <span className="break-keep">메뉴 & 맛있는 식사 보기</span>
+            <Utensils className="w-4 h-4 shrink-0" />
+            <span>메뉴 & 맛있는 식사 보기</span>
           </button>
 
           <button
             id="hero-location-cta"
             onClick={() => onNavigate('location')}
-            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-3 sm:py-3.5 bg-stone-900/90 hover:bg-stone-800 text-white font-medium rounded-xl border border-stone-600/80 transition-all text-xs sm:text-base backdrop-blur-sm cursor-pointer whitespace-nowrap hover:border-amber-500/50"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-stone-900/90 hover:bg-stone-800 text-white font-medium rounded-xl border border-stone-600/80 transition-all text-sm sm:text-base backdrop-blur-sm cursor-pointer whitespace-nowrap hover:border-amber-500/50"
           >
-            <Navigation className="w-3.5 h-3.5 sm:w-4 h-4 text-amber-400 shrink-0" />
-            <span className="break-keep">오시는 길 & 무료 주차장</span>
+            <Navigation className="w-4 h-4 text-amber-400 shrink-0" />
+            <span>오시는 길 & 무료 주차장</span>
           </button>
         </motion.div>
 
