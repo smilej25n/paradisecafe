@@ -56,26 +56,26 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
       }`}
     >
       {/* Top micro announcement bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between flex-nowrap">
         {/* Brand Logo */}
         <button
           id="header-logo-btn"
           onClick={() => handleNavItemClick('hero')}
-          className="flex items-center gap-3 text-left group focus:outline-none"
+          className="flex items-center gap-2 sm:gap-3 text-left group focus:outline-none min-w-0 pr-2"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-orange-600 to-rose-600 flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
-            <Sun className="w-6 h-6 text-white animate-spin-slow" />
+          <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-gradient-to-br from-amber-500 via-orange-600 to-rose-600 flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
+            <Sun className="w-5 h-5 sm:w-6 sm:h-6 text-white animate-spin-slow" />
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-bold tracking-tight text-white font-serif">
+          <div className="min-w-0">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="text-base sm:text-xl font-bold tracking-tight text-white font-serif truncate">
                 카페 파라다이스
               </span>
-              <span className="hidden sm:inline-block px-2 py-0.5 text-[11px] font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full">
+              <span className="hidden md:inline-block px-2 py-0.5 text-[11px] font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full">
                 영광 백수해안도로
               </span>
             </div>
-            <p className="text-[11px] text-stone-300 tracking-wider">
+            <p className="text-[10px] sm:text-[11px] text-stone-300 tracking-wider truncate">
               PARADISE CAFE & OCEAN LOUNGE
             </p>
           </div>
@@ -100,13 +100,13 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 flex-nowrap">
           {/* Ambient Music Button */}
           <button
             id="ambient-audio-toggle"
             onClick={toggleSound}
             title={isPlayingAudio ? '야외 감성 음악 끄기' : '야외 감성 음악 & 파도소리 켜기'}
-            className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+            className={`shrink-0 inline-flex items-center justify-center gap-1.5 h-8 sm:h-9 px-2.5 sm:px-3 rounded-full text-xs font-medium border transition-all ${
               isPlayingAudio
                 ? 'bg-amber-500/20 border-amber-400 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.4)] animate-pulse'
                 : 'bg-white/10 border-white/20 text-stone-300 hover:bg-white/20 hover:text-white'
@@ -114,13 +114,13 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
           >
             {isPlayingAudio ? (
               <>
-                <Volume2 className="w-3.5 h-3.5 text-amber-400" />
-                <span className="hidden sm:inline">음악 ON</span>
+                <Volume2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span className="hidden sm:inline whitespace-nowrap">음악 ON</span>
               </>
             ) : (
               <>
-                <VolumeX className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">바다음악</span>
+                <VolumeX className="w-3.5 h-3.5 shrink-0" />
+                <span className="hidden sm:inline whitespace-nowrap">바다음악</span>
               </>
             )}
           </button>
@@ -128,21 +128,23 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
           {/* Quick Call */}
           <a
             id="header-quick-call-btn"
-            href={`tel:${STORE_INFO.phone}`}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-stone-950 rounded-lg text-xs sm:text-sm font-bold shadow-md shadow-amber-500/20 transition-all hover:scale-105"
+            href="tel:061-352-3516"
+            title="매장 전화 걸기 (061-352-3516)"
+            aria-label="카페 파라다이스 매장 전화 걸기 (061-352-3516)"
+            className="shrink-0 inline-flex items-center justify-center gap-1 h-8 sm:h-9 px-2.5 sm:px-3.5 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-stone-950 rounded-lg text-xs sm:text-sm font-bold shadow-md shadow-amber-500/20 transition-all hover:scale-105 whitespace-nowrap cursor-pointer"
           >
-            <Phone className="w-3.5 h-3.5" />
-            <span>전화문의</span>
+            <Phone className="w-3.5 h-3.5 shrink-0" />
+            <span className="whitespace-nowrap break-keep select-none leading-none">전화문의</span>
           </a>
 
           {/* Mobile Menu Hamburger */}
           <button
             id="mobile-menu-toggle-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg bg-white/10 text-stone-200 hover:text-white hover:bg-white/20"
+            className="lg:hidden shrink-0 inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white/10 text-stone-200 hover:text-white hover:bg-white/20"
             aria-label="메뉴 열기"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 shrink-0" /> : <Menu className="w-5 h-5 shrink-0" />}
           </button>
         </div>
       </div>

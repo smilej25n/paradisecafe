@@ -74,12 +74,51 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <span className="block">붉게 물드는 서해의 노을과 함께 잠시 쉬어가는 특별한 시간을 선물합니다.</span>
         </motion.p>
 
-        {/* Quick Highlights Grid */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 max-w-4xl mx-auto mb-10 text-left"
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10"
+        >
+          <button
+            id="hero-menu-cta"
+            onClick={() => onNavigate('menu')}
+            className="px-6 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-stone-950 font-bold rounded-xl shadow-lg shadow-amber-500/25 flex items-center gap-2 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base cursor-pointer"
+          >
+            <Utensils className="w-4 h-4" />
+            <span>메뉴 & 맛있는 식사 보기</span>
+          </button>
+
+          <button
+            id="hero-location-cta"
+            onClick={() => onNavigate('location')}
+            className="px-6 py-3.5 bg-stone-900/90 hover:bg-stone-800 text-white font-medium rounded-xl border border-stone-600/80 flex items-center gap-2 transition-all text-sm sm:text-base backdrop-blur-sm cursor-pointer"
+          >
+            <Navigation className="w-4 h-4 text-amber-400" />
+            <span>오시는 길 & 무료 주차장</span>
+          </button>
+
+          <button
+            id="hero-audio-cta"
+            onClick={onOpenAudio}
+            className={`px-5 py-3.5 rounded-xl border flex items-center gap-2 transition-all text-sm cursor-pointer ${
+              isPlayingAudio
+                ? 'bg-amber-500/20 border-amber-400 text-amber-300'
+                : 'bg-black/40 border-stone-700 text-stone-300 hover:bg-black/60 hover:text-white'
+            }`}
+          >
+            <Music className="w-4 h-4 text-amber-400" />
+            <span>{isPlayingAudio ? '야외 감성 음악 재생중' : '야외 감성 음악 듣기'}</span>
+          </button>
+        </motion.div>
+
+        {/* Quick Highlights Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 max-w-4xl mx-auto text-left"
         >
           <div className="bg-stone-900/80 backdrop-blur-md border border-stone-700/80 rounded-xl p-3.5 hover:border-amber-500/50 transition-all group">
             <div className="text-amber-400 mb-1.5 flex items-center justify-between">
@@ -116,45 +155,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="font-bold text-white text-sm">튀일·마들렌·쿠키</div>
             <div className="text-xs text-stone-400 mt-0.5">정성으로 구워낸 수제 구움과자</div>
           </div>
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4"
-        >
-          <button
-            id="hero-menu-cta"
-            onClick={() => onNavigate('menu')}
-            className="px-6 py-3.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-stone-950 font-bold rounded-xl shadow-lg shadow-amber-500/25 flex items-center gap-2 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base"
-          >
-            <Utensils className="w-4 h-4" />
-            <span>메뉴 & 맛있는 식사 보기</span>
-          </button>
-
-          <button
-            id="hero-location-cta"
-            onClick={() => onNavigate('location')}
-            className="px-6 py-3.5 bg-stone-900/90 hover:bg-stone-800 text-white font-medium rounded-xl border border-stone-600/80 flex items-center gap-2 transition-all text-sm sm:text-base backdrop-blur-sm"
-          >
-            <Navigation className="w-4 h-4 text-amber-400" />
-            <span>오시는 길 & 무료 주차장</span>
-          </button>
-
-          <button
-            id="hero-audio-cta"
-            onClick={onOpenAudio}
-            className={`px-5 py-3.5 rounded-xl border flex items-center gap-2 transition-all text-sm ${
-              isPlayingAudio
-                ? 'bg-amber-500/20 border-amber-400 text-amber-300'
-                : 'bg-black/40 border-stone-700 text-stone-300 hover:bg-black/60 hover:text-white'
-            }`}
-          >
-            <Music className="w-4 h-4 text-amber-400" />
-            <span>{isPlayingAudio ? '야외 감성 음악 재생중' : '야외 감성 음악 듣기'}</span>
-          </button>
         </motion.div>
       </div>
 
