@@ -29,17 +29,24 @@ export const LocationSection: React.FC = () => {
 
   const handleTmapClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    const appUrl = `tmap://search?name=${encodeURIComponent(exactAddress)}`;
-    const webUrl = `https://tmap.life/search?q=${encodeURIComponent(exactAddress)}`;
+    const userAgent = navigator.userAgent || '';
+    const isAndroid = /Android/i.test(userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(userAgent);
+    const isMobile = isAndroid || isIOS;
 
-    if (isMobile) {
-      window.location.href = appUrl;
+    if (isAndroid) {
+      // Android Intent for TMAP app
+      window.location.href = `intent://search?name=${encodeURIComponent(exactAddress)}#Intent;scheme=tmap;package=com.skt.tmap.ku;end`;
+    } else if (isIOS) {
+      // iOS URL scheme for TMAP app
+      window.location.href = `tmap://search?name=${encodeURIComponent(exactAddress)}`;
       setTimeout(() => {
-        window.open(webUrl, '_blank');
-      }, 1200);
+        // If not installed on iOS, redirect to App Store
+        window.location.href = 'https://apps.apple.com/kr/app/id431589174';
+      }, 1500);
     } else {
-      window.open(webUrl, '_blank');
+      // Desktop / PC environment: open web map search
+      window.open(`https://map.kakao.com/link/search/${encodedAddress}`, '_blank');
     }
   };
 
@@ -59,7 +66,7 @@ export const LocationSection: React.FC = () => {
     {
       id: 'tmap-nav-btn',
       name: '티맵 (TMAP)',
-      url: `https://tmap.life/search?q=${encodedAddress}`,
+      url: `https://map.kakao.com/link/search/${encodedAddress}`,
       onClick: handleTmapClick,
       color: 'bg-blue-600 text-white hover:bg-blue-500',
     },
