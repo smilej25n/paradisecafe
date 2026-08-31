@@ -23,23 +23,44 @@ export const LocationSection: React.FC = () => {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const encodedAddress = encodeURIComponent(STORE_INFO.address);
-  const encodedName = encodeURIComponent('카페 파라다이스');
+  const exactAddress = '전라남도 영광군 백수읍 백암리 60-1';
+  const fullDestination = '전라남도 영광군 백수읍 백암리 60-1 (파라다이스 편의점 카페)';
+  const encodedAddress = encodeURIComponent(exactAddress);
+
+  const handleTmapClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const appUrl = `tmap://search?name=${encodeURIComponent(exactAddress)}`;
+    const webUrl = `https://tmap.life/search?q=${encodeURIComponent(exactAddress)}`;
+
+    if (isMobile) {
+      window.location.href = appUrl;
+      setTimeout(() => {
+        window.open(webUrl, '_blank');
+      }, 1200);
+    } else {
+      window.open(webUrl, '_blank');
+    }
+  };
 
   const navLinks = [
     {
-      name: '카카오내비 / 카카오맵',
+      id: 'kakao-nav-btn',
+      name: '카카오내비 / 맵',
       url: `https://map.kakao.com/link/search/${encodedAddress}`,
       color: 'bg-yellow-400 text-stone-900 hover:bg-yellow-300',
     },
     {
+      id: 'naver-nav-btn',
       name: '네이버 지도',
       url: `https://map.naver.com/v5/search/${encodedAddress}`,
       color: 'bg-emerald-600 text-white hover:bg-emerald-500',
     },
     {
+      id: 'tmap-nav-btn',
       name: '티맵 (TMAP)',
       url: `https://tmap.life/search?q=${encodedAddress}`,
+      onClick: handleTmapClick,
       color: 'bg-blue-600 text-white hover:bg-blue-500',
     },
   ];
@@ -128,16 +149,19 @@ export const LocationSection: React.FC = () => {
                 원터치 내비게이션 길안내 연결:
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                {navLinks.map((link, idx) => (
+                {navLinks.map((link) => (
                   <a
-                    key={idx}
+                    key={link.id}
+                    id={link.id}
                     href={link.url}
+                    onClick={link.onClick}
                     target="_blank"
                     rel="noreferrer"
-                    className={`py-2.5 px-3 rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition-transform hover:scale-102 ${link.color}`}
+                    title={`${link.name}으로 ${fullDestination} 길안내 시작`}
+                    className={`py-2.5 px-3 rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition-transform hover:scale-102 cursor-pointer ${link.color}`}
                   >
-                    <Navigation className="w-3.5 h-3.5" />
-                    <span>{link.name}</span>
+                    <Navigation className="w-3.5 h-3.5 shrink-0" />
+                    <span className="whitespace-nowrap">{link.name}</span>
                   </a>
                 ))}
               </div>
