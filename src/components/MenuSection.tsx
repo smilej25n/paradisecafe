@@ -151,12 +151,17 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ initialCategory = 'all
         </div>
 
         {/* Menu Operation Reassurance Note */}
-        <div className="max-w-4xl mx-auto mb-10 text-center px-4">
-          <p className="text-xs sm:text-sm text-stone-300 bg-stone-900/80 border border-stone-800 rounded-xl px-5 py-2.5 inline-flex items-center gap-1.5 shadow-sm">
-            <span>📢</span>
-            <span className="text-amber-400 font-bold">안내:</span>
-            <span>신선한 재료로 정성껏 준비하며, 단체 및 식사 문의는 매장 직통({STORE_INFO.phone})으로 연락 주시면 친절히 안내해 드립니다.</span>
-          </p>
+        <div className="max-w-4xl mx-auto mb-10 text-center px-3 sm:px-4">
+          <div className="text-xs sm:text-sm text-stone-300 bg-stone-900/80 border border-stone-800 rounded-xl px-4 py-2.5 inline-block sm:inline-flex items-center justify-center gap-1.5 shadow-sm text-center leading-relaxed">
+            <span className="block sm:inline">
+              <span className="mr-1">📢</span>
+              <span className="text-amber-400 font-bold mr-1">안내:</span>
+              <span>신선한 재료로 정성껏 준비하며,</span>
+            </span>{' '}
+            <span className="block sm:inline text-stone-200">
+              단체 및 식사 문의는 직통전화({STORE_INFO.phone})로 편하게 연락주세요.
+            </span>
+          </div>
         </div>
 
         {/* Menu Items Grid */}
