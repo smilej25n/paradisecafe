@@ -23,30 +23,29 @@ export const LocationSection: React.FC = () => {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const exactAddress = '전라남도 영광군 백수읍 백암리 60-1';
-  const fullDestination = '전라남도 영광군 백수읍 백암리 60-1 (파라다이스 편의점 카페)';
+  const exactAddress = '전남광주통합특별시 영광군 백수읍 해안로 703';
+  const fullDestination = '전남광주통합특별시 영광군 백수읍 해안로 703 (카페 파라다이스)';
   const encodedAddress = encodeURIComponent(exactAddress);
 
   const handleTmapClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
+    // Automatically copy address for convenience
+    navigator.clipboard?.writeText(exactAddress);
+
     const userAgent = navigator.userAgent || '';
     const isAndroid = /Android/i.test(userAgent);
     const isIOS = /iPhone|iPad|iPod/i.test(userAgent);
-    const isMobile = isAndroid || isIOS;
 
     if (isAndroid) {
+      e.preventDefault();
       // Android Intent for TMAP app
-      window.location.href = `intent://search?name=${encodeURIComponent(exactAddress)}#Intent;scheme=tmap;package=com.skt.tmap.ku;end`;
+      window.location.href = `intent://search?name=${encodedAddress}#Intent;scheme=tmap;package=com.skt.tmap.ku;end`;
     } else if (isIOS) {
+      e.preventDefault();
       // iOS URL scheme for TMAP app
-      window.location.href = `tmap://search?name=${encodeURIComponent(exactAddress)}`;
-      setTimeout(() => {
-        // If not installed on iOS, redirect to App Store
-        window.location.href = 'https://apps.apple.com/kr/app/id431589174';
-      }, 1500);
+      window.location.href = `tmap://search?name=${encodedAddress}`;
     } else {
-      // Desktop / PC environment: open web map search
-      window.open(`https://map.kakao.com/link/search/${encodedAddress}`, '_blank');
+      // Desktop / Web environment: Direct TMAP protocol trigger
+      window.location.href = `tmap://search?name=${encodedAddress}`;
     }
   };
 
@@ -66,7 +65,7 @@ export const LocationSection: React.FC = () => {
     {
       id: 'tmap-nav-btn',
       name: '티맵 (TMAP)',
-      url: `https://map.kakao.com/link/search/${encodedAddress}`,
+      url: `tmap://search?name=${encodedAddress}`,
       onClick: handleTmapClick,
       color: 'bg-blue-600 text-white hover:bg-blue-500',
     },
