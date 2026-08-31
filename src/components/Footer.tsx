@@ -22,8 +22,8 @@ export const Footer: React.FC<{ onScrollTop: () => void }> = ({ onScrollTop }) =
                 </span>
               </div>
             </div>
-            <p className="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-md">
-              전남 영광 백수해안도로 바다 바로 앞에 자리한 아늑한 쉼터. 부모님의 정성 어린 손맛과 탁 트인 노을이 머무는 곳, 카페 파라다이스에서 소중한 쉼을 누리세요.
+            <p className="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-lg">
+              영광 백수해안도로 바다 앞 아늑한 쉼터. 따뜻한 정성과 탁 트인 노을이 머무는 카페 파라다이스에서 소중한 쉼을 누리세요.
             </p>
           </div>
 
@@ -38,10 +38,16 @@ export const Footer: React.FC<{ onScrollTop: () => void }> = ({ onScrollTop }) =
               <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>전화문의: {STORE_INFO.phone}</span>
             </p>
-            <p className="flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>영업시간: {STORE_INFO.operatingHours}</span>
-            </p>
+            <div className="flex items-start gap-1.5 pt-0.5">
+              <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-1 leading-relaxed">
+                <span className="shrink-0">영업시간 :</span>
+                <div className="space-y-0.5">
+                  <div>평일 13:30 ~ 19:00 (일몰 시간에 따라 탄력적 연장 영업)</div>
+                  <div className="text-stone-300">주말과 공휴일 : 9:30 ~ 20:00</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

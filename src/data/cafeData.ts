@@ -18,8 +18,8 @@ export const STORE_INFO: StoreInfo = {
   subName: 'CAFE & OCEAN LOUNGE PARADISE',
   phone: '061-352-3516', // Yeonggwang area code 061
   address: '전남광주통합특별시 영광군 백수읍 해안로 703',
-  addressDetail: '바다가 바로 내려다보이는 해안도로변 1층 단독건물 & 넓은 자갈마당',
-  operatingHours: '매일 10:00 ~ 21:00 (일몰 시간에 따라 탄력적 연장 영업 / 연중무휴)',
+  addressDetail: '바다가 내려다보이는 해안도로변 1층 단독건물 & 넓은 자갈마당',
+  operatingHours: '평일 13:30 ~ 19:00 (일몰 시간에 따라 탄력적 연장 영업) / 주말·공휴일 09:30 ~ 20:00',
   parkingInfo: '매장 전용 넓은 무료 주차장 완비 (대형 SUV 및 단체 방문 가능)',
   restroomInfo: '남/여 구분 청결하고 깨끗한 실내 화장실 완비',
   notice: '노을 지는 오후 6시~7시 30분경 야외 자갈마당 파라솔 좌석이 가장 인기 있습니다.',

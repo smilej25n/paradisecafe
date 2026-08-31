@@ -199,12 +199,15 @@ export const LocationSection: React.FC = () => {
                 </div>
 
                 <div className="p-4 bg-stone-800/80 rounded-2xl border border-stone-700">
-                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1">
+                  <div className="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1.5">
                     <Clock className="w-4 h-4" />
                     <span>영업 시간</span>
                   </div>
-                  <p className="text-stone-200 text-sm">{STORE_INFO.operatingHours}</p>
-                  <p className="text-stone-400 text-xs mt-0.5">{STORE_INFO.notice}</p>
+                  <div className="text-stone-200 text-sm space-y-0.5">
+                    <div><span className="font-semibold text-white">평일:</span> 13:30 ~ 19:00 (일몰 시간에 따라 탄력적 연장 영업)</div>
+                    <div><span className="font-semibold text-white">주말과 공휴일:</span> 9:30 ~ 20:00</div>
+                  </div>
+                  <p className="text-stone-400 text-xs mt-1.5">{STORE_INFO.notice}</p>
                 </div>
 
                 <div className="p-4 bg-stone-800/80 rounded-2xl border border-stone-700">
