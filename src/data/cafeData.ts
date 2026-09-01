@@ -4,6 +4,12 @@ import heroSunset from '../assets/images/paradise_exact_real_hero_1788067718142.
 import homemadeFood from '../assets/images/paradise_homemade_food_1788065897549.jpg';
 import bakeryDessert from '../assets/images/paradise_bakery_dessert_1788065913166.jpg';
 import snackMart from '../assets/images/paradise_snack_mart_1788065926055.jpg';
+import sunsetObservatory from '../assets/images/sunset_observatory_1788183356480.jpg';
+import baeksuRoad from '../assets/images/baeksu_road_1788183871938.jpg';
+import chilsanTower from '../assets/images/chilsan_tower_1788183886897.jpg';
+import baekjeSite from '../assets/images/baekje_site_1788183900605.jpg';
+import gamamiBeach from '../assets/images/gamami_beach_1788184292763.jpg';
+import yeonggwangWindFarm from '../assets/images/yeonggwang_wind_farm_1788184317862.jpg';
 
 export const IMAGES = {
   heroSunset,
@@ -11,6 +17,12 @@ export const IMAGES = {
   homemadeFood,
   bakeryDessert,
   snackMart,
+  sunsetObservatory,
+  baeksuRoad,
+  chilsanTower,
+  baekjeSite,
+  gamamiBeach,
+  yeonggwangWindFarm,
 };
 
 export const STORE_INFO: StoreInfo = {
@@ -270,10 +282,31 @@ export const DRIVE_COURSES: DriveCourse[] = [
     tag: '가장 추천하는 대표 코스',
     duration: '약 3~4시간 소요',
     spots: [
-      { name: '영광노을전시관', desc: '노을 과학과 서해안 일몰 역사 관람' },
-      { name: '백수해안도로 드라이브', desc: '한국의 아름다운 길 100선 드라이브' },
-      { name: '카페 파라다이스 (노을 & 식사)', desc: '자갈마당 테라스에서 노을 보며 수제돈가스·커피·맥주 즐기기', isParadise: true },
-      { name: '칠산타워 & 칠산대교', desc: '야경 드라이브 및 바다 전망' },
+      {
+        name: '영광노을전시관',
+        desc: '노을 과학과 서해안 일몰 역사 관람 & 바다 전망 데크',
+        image: IMAGES.sunsetObservatory,
+        mapUrl: 'https://map.naver.com/p/search/%EC%98%81%EA%B4%91%EB%85%B8%EC%9D%84%EC%A0%84%EC%8B%9C%EA%B4%80',
+      },
+      {
+        name: '백수해안도로 드라이브',
+        desc: '한국의 아름다운 길 100선 해안 절벽길 드라이브 & 노을길 산책',
+        image: IMAGES.baeksuRoad,
+        mapUrl: 'https://map.naver.com/p/search/%EC%98%81%EA%B4%91%20%EB%B0%B1%EC%88%98%ED%95%B4%EC%95%88%EB%8F%84%EB%A1%9C',
+      },
+      {
+        name: '카페 파라다이스 (노을 & 식사)',
+        desc: '자갈마당 테라스에서 노을 보며 수제돈가스·커피·맥주 즐기기',
+        isParadise: true,
+        image: IMAGES.gravelTerrace,
+        mapUrl: 'https://map.naver.com/p/entry/place/1175028249',
+      },
+      {
+        name: '칠산타워 & 칠산대교',
+        desc: '야경 드라이브 및 전남 최고 높이 111m 바다 전망대',
+        image: IMAGES.chilsanTower,
+        mapUrl: 'https://map.naver.com/p/search/%EC%98%81%EA%B4%91%20%EC%B9%A0%EC%82%B0%ED%83%80%EC%9B%8C',
+      },
     ],
     tip: '오후 5시경 백수해안도로에 진입해 6시 전후 카페 파라다이스에 도착하시면 환상적인 일몰을 감상할 수 있습니다.',
   },
@@ -283,9 +316,31 @@ export const DRIVE_COURSES: DriveCourse[] = [
     tag: '가족 & 커플 여행 코스',
     duration: '약 4~5시간 소요',
     spots: [
-      { name: '영광 굴비거리 & 백제불교최초도래지', desc: '영광의 맛과 역사 탐방' },
-      { name: '가마미 해수욕장 / 풍력발전단지', desc: '시원한 백사장과 거대한 풍차 포토존' },
-      { name: '카페 파라다이스 (쉼터 & 디저트)', desc: '통유리 오션뷰에서 엄마 손맛 김치볶음밥 & 동생 수제 디저트', isParadise: true },
+      {
+        name: '영광 굴비거리 & 백제불교최초도래지',
+        desc: '영광의 맛과 이국적인 간다라 양식의 백제 불교 역사 탐방',
+        image: IMAGES.baekjeSite,
+        mapUrl: 'https://map.naver.com/p/search/%EB%B0%B1%EC%A0%9C%EB%B6%88%EA%B5%90%EC%B5%9C%EC%B4%88%EB%8F%84%EB%9E%98%EC%A7%80',
+      },
+      {
+        name: '가마미해수욕장',
+        desc: '호남 3대 해수욕장, 고운 모래사장과 시원한 바다 뷰 산책',
+        image: IMAGES.gamamiBeach,
+        mapUrl: 'https://map.naver.com/p/search/%EA%B0%80%EB%A7%88%EB%AF%B8%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5/place/11491644?c=15.00,0,0,0,dh&placePath=%3Fbk_query%253D%2525EA%2525B0%252580%2525EB%2525A7%252588%2525EB%2525AF%2525B8%2525ED%252595%2525B4%2525EC%252588%252598%2525EC%25259A%252595%2525EC%25259E%2525A5%2526entry%253Dbmp',
+      },
+      {
+        name: '영광풍력발전단지',
+        desc: '해안 도로변에 줄지어 선 웅장한 풍차와 시원한 바닷바람 포토존',
+        image: IMAGES.yeonggwangWindFarm,
+        mapUrl: 'https://map.naver.com/p/entry/place/1206005349?c=15.00,0,0,0,dh&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202609011556%26locale%3Dko%26svcName%3Dmap_pcv5',
+      },
+      {
+        name: '카페 파라다이스 (쉼터 & 디저트)',
+        desc: '통유리 오션뷰에서 엄마 손맛 김치볶음밥 & 수제 디저트',
+        isParadise: true,
+        image: IMAGES.gravelTerrace,
+        mapUrl: 'https://map.naver.com/p/entry/place/1175028249',
+      },
     ],
     tip: '운전 중 시원한 맥주/음료나 과자, 담배가 필요할 때 해안도로의 든든한 휴식처가 되어드립니다.',
   },

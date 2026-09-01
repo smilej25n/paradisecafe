@@ -42,10 +42,10 @@ export const FacilitiesSection: React.FC = () => {
             <span>Spaces & Amenities</span>
           </div>
           <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight font-serif break-keep">
-            바다와 노을을 온전히 담아낸 <span className="text-amber-400">파라다이스 공간 안내</span>
+            바다와 노을을 온전히 담아낸 <span className="text-amber-400">파라다이스 공간</span>
           </h2>
-          <p className="text-stone-300 text-sm sm:text-base mt-2">
-            부모님의 정성이 닿은 넓은 자갈마당부터 옥상 테라스, 통유리 오션뷰 실내까지 답답함 없이 탁 트인 휴식을 선사합니다.
+          <p className="text-stone-300 text-sm sm:text-base mt-2 break-keep">
+            탁 트인 자갈마당부터 옥상 테라스, 통유리 오션뷰 실내까지 온전한 쉼과 여유를 선사합니다.
           </p>
         </div>
 

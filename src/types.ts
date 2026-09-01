@@ -20,12 +20,20 @@ export interface Facility {
   iconName: string;
 }
 
+export interface CourseSpot {
+  name: string;
+  desc: string;
+  isParadise?: boolean;
+  image?: string;
+  mapUrl?: string;
+}
+
 export interface DriveCourse {
   id: string;
   title: string;
   tag: string;
   duration: string;
-  spots: { name: string; desc: string; isParadise?: boolean }[];
+  spots: CourseSpot[];
   tip: string;
 }
 

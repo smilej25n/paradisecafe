@@ -61,21 +61,21 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, activeSection }) => 
         <button
           id="header-logo-btn"
           onClick={() => handleNavItemClick('hero')}
-          className="flex items-center gap-2 sm:gap-3 text-left group focus:outline-none min-w-0 pr-2"
+          className="flex items-center gap-2 sm:gap-3 text-left group focus:outline-none min-w-0"
         >
           <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-gradient-to-br from-amber-500 via-orange-600 to-rose-600 flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
             <Sun className="w-5 h-5 sm:w-6 sm:h-6 text-white animate-spin-slow" />
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-1.5 sm:gap-2">
-              <span className="text-base sm:text-xl font-bold tracking-tight text-white font-serif truncate">
+              <span className="text-base sm:text-xl font-bold tracking-tight text-white font-serif whitespace-nowrap">
                 카페 파라다이스
               </span>
               <span className="hidden md:inline-block px-2 py-0.5 text-[11px] font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full">
                 영광 백수해안도로
               </span>
             </div>
-            <p className="text-[10px] sm:text-[11px] text-stone-300 tracking-wider truncate">
+            <p className="text-[9px] sm:text-[11px] text-stone-300 tracking-normal sm:tracking-wider whitespace-nowrap leading-tight">
               PARADISE CAFE & OCEAN LOUNGE
             </p>
           </div>

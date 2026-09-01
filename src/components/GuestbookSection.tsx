@@ -48,10 +48,10 @@ export const GuestbookSection: React.FC = () => {
             <span>Visitor Stories & Warm Memories</span>
           </div>
           <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight font-serif break-keep">
-            다녀간 여행객들이 전하는 <span className="text-amber-400">카페 파라다이스 이야기</span>
+            여행객들이 전하는 <span className="text-amber-400">파라다이스 이야기</span>
           </h2>
-          <p className="text-stone-300 text-sm sm:text-base mt-2">
-            부모님의 따뜻한 손길과 바다 앞 자갈마당에서 머문 소중한 추억들을 모았습니다.
+          <p className="text-stone-300 text-sm sm:text-base mt-2 break-keep">
+            따뜻한 정성과 푸른 바다 앞 자갈마당에서 머문 소중한 추억들을 모았습니다.
           </p>
         </div>
 

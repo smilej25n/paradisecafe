@@ -59,7 +59,7 @@ export const LocationSection: React.FC = () => {
     {
       id: 'naver-nav-btn',
       name: '네이버 지도',
-      url: `https://map.naver.com/v5/search/${encodedAddress}`,
+      url: `https://map.naver.com/p/entry/place/1175028249`,
       color: 'bg-emerald-600 text-white hover:bg-emerald-500',
     },
     {

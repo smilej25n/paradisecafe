@@ -36,7 +36,7 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
         title: '낮 시간대 푸른 바다 감상 중',
         badge: '시원한 오션뷰',
         desc: `오늘 영광 일몰까지 약 ${hoursLeft}시간 ${minsLeft}분 남았습니다.`,
-        tip: '낮에는 맑고 푸른 서해 바다와 통유리 실내에서 시원한 커피 & 음료를 즐겨보세요.',
+        tip: '낮에는 맑고 푸른 서해 바다와 시원한 음료를 즐겨보세요.',
       };
     } else if (diff > 0) {
       return {
@@ -44,7 +44,7 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
         title: '✨ 골든 아워 진입 중! 일몰 카운트다운',
         badge: '인생샷 황금시간',
         desc: `일몰 시작까지 약 ${diff}분 남았습니다! 지금 자갈마당 파라솔로 나가보세요.`,
-        tip: '하늘이 주황빛에서 분홍빛으로 물드는 가장 아름다운 시간입니다. 옥상 테라스 뷰를 추천합니다.',
+        tip: '하늘이 붉게 물드는 황금 시간입니다. 옥상 뷰를 추천합니다.',
       };
     } else if (diff > -60) {
       return {
@@ -52,7 +52,7 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
         title: '🌅 환상적인 서해안 노을 절정 시간!',
         badge: '노을 1열 직관 중',
         desc: '지금 바다와 하늘이 붉게 타오르는 순간입니다.',
-        tip: '밖으로 흘러나오는 감성 음악과 함께 시원한 맥주나 커피를 곁들이며 잊지 못할 추억을 담아보세요.',
+        tip: '감성 음악과 함께 노을빛 자갈마당에서 인생샷을 남겨보세요.',
       };
     } else {
       return {
@@ -60,7 +60,7 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
         title: '낭만적인 밤바다 & 야간 조명',
         badge: '나이트 오션뷰',
         desc: '어두워진 서해 바다와 테라스 조명이 낭만을 더합니다.',
-        tip: '밤바다 파도 소리를 들으며 매콤 닭발볶음이나 돈가스, 따뜻한 차 한잔으로 여유를 즐겨보세요.',
+        tip: '밤바다 파도 소리를 들으며 맛있는 식사와 차 한잔을 즐겨보세요.',
       };
     }
   };
@@ -80,7 +80,7 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
             <span>Yeonggwang Sunset & Golden Hour</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight font-serif">
-            영광 백수해안도로 <span className="text-orange-400">일몰 & 노을 감상 가이드</span>
+            영광 백수해안도로 <span className="text-orange-400">일몰 & 노을 감상</span>
           </h2>
           <p className="text-stone-300 text-sm sm:text-base mt-2">
             한국의 아름다운 길 100선 백수해안도로에서 가장 아름다운 순간을 카페 파라다이스에서 만끽하세요.
@@ -146,10 +146,15 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
             </div>
 
             {/* Practical Tip */}
-            <div className="p-4 bg-orange-950/40 border border-orange-800/50 rounded-2xl flex items-start gap-3">
-              <Sparkles className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
-              <div className="text-xs sm:text-sm text-stone-200">
-                <strong className="text-orange-300">파라다이스 노을 꿀팁:</strong> {status.tip}
+            <div className="p-3.5 sm:p-4 bg-orange-950/40 border border-orange-800/50 rounded-2xl flex items-start gap-2.5 sm:gap-3">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400 shrink-0 mt-0.5" />
+              <div className="text-xs sm:text-sm text-stone-200 leading-snug sm:leading-relaxed">
+                <span className="block sm:inline font-bold text-orange-300 mr-1.5">
+                  파라다이스 노을 꿀팁:
+                </span>
+                <span className="block sm:inline text-stone-300 break-keep">
+                  {status.tip}
+                </span>
               </div>
             </div>
 
@@ -211,32 +216,34 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
         </div>
 
         {/* 4-Season Evergreen Reference Table */}
-        <div className="p-6 bg-stone-900/80 border border-stone-800 rounded-3xl">
-          <div className="flex items-center gap-2 mb-4">
-            <Calendar className="w-4 h-4 text-amber-400" />
-            <h4 className="text-sm sm:text-base font-bold text-white">사계절 영광 백수해안도로 일몰 시간표</h4>
-            <span className="text-xs text-stone-400 font-normal ml-auto">※ 계절별 방문 추천 시간대</span>
+        <div className="p-4 sm:p-6 bg-stone-900/80 border border-stone-800 rounded-3xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-4">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-amber-400 shrink-0" />
+              <h4 className="text-sm sm:text-base font-bold text-white">사계절 영광 백수해안도로 일몰 시간표</h4>
+            </div>
+            <span className="text-xs text-stone-400 font-normal pl-6 sm:pl-0">※ 계절별 방문 추천 시간대</span>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className={`p-3.5 rounded-2xl border ${season === '봄' ? 'bg-amber-500/10 border-amber-500/40 text-amber-300' : 'bg-stone-800/60 border-stone-700/60 text-stone-300'}`}>
-              <div className="font-bold text-white mb-1">🌸 봄철 (3월 ~ 5월)</div>
-              <div className="text-sm font-extrabold text-amber-400">18:40 ~ 19:20</div>
-              <div className="text-[11px] text-stone-400 mt-1">포근한 봄바람 & 선셋</div>
+              <div className="text-sm sm:text-base font-bold text-white mb-1.5 break-keep leading-snug">🌸 봄철 <span className="text-xs font-normal text-stone-300 sm:text-sm">(3월~5월)</span></div>
+              <div className="text-xs sm:text-sm font-semibold text-amber-400 tracking-wide">18:40 ~ 19:20</div>
+              <div className="text-[11px] text-stone-400 mt-1 break-keep leading-tight">포근한 봄바람 & 선셋</div>
             </div>
             <div className={`p-3.5 rounded-2xl border ${season === '여름' ? 'bg-orange-500/10 border-orange-500/40 text-orange-300' : 'bg-stone-800/60 border-stone-700/60 text-stone-300'}`}>
-              <div className="font-bold text-white mb-1">☀️ 여름철 (6월 ~ 8월)</div>
-              <div className="text-sm font-extrabold text-orange-400">19:20 ~ 19:50</div>
-              <div className="text-[11px] text-stone-400 mt-1">붉고 화려한 여름 낙조</div>
+              <div className="text-sm sm:text-base font-bold text-white mb-1.5 break-keep leading-snug">☀️ 여름철 <span className="text-xs font-normal text-stone-300 sm:text-sm">(6월~8월)</span></div>
+              <div className="text-xs sm:text-sm font-semibold text-orange-400 tracking-wide">19:20 ~ 19:50</div>
+              <div className="text-[11px] text-stone-400 mt-1 break-keep leading-tight">붉고 화려한 여름 낙조</div>
             </div>
             <div className={`p-3.5 rounded-2xl border ${season === '가을' ? 'bg-amber-500/10 border-amber-500/40 text-amber-300' : 'bg-stone-800/60 border-stone-700/60 text-stone-300'}`}>
-              <div className="font-bold text-white mb-1">🍁 가을철 (9월 ~ 11월)</div>
-              <div className="text-sm font-extrabold text-amber-400">17:40 ~ 18:30</div>
-              <div className="text-[11px] text-stone-400 mt-1">가장 맑고 짙은 황혼</div>
+              <div className="text-sm sm:text-base font-bold text-white mb-1.5 break-keep leading-snug">🍁 가을철 <span className="text-xs font-normal text-stone-300 sm:text-sm">(9월~11월)</span></div>
+              <div className="text-xs sm:text-sm font-semibold text-amber-400 tracking-wide">17:40 ~ 18:30</div>
+              <div className="text-[11px] text-stone-400 mt-1 break-keep leading-tight">가장 맑고 짙은 황혼</div>
             </div>
             <div className={`p-3.5 rounded-2xl border ${season === '겨울' ? 'bg-blue-500/10 border-blue-500/40 text-blue-300' : 'bg-stone-800/60 border-stone-700/60 text-stone-300'}`}>
-              <div className="font-bold text-white mb-1">❄️ 겨울철 (12월 ~ 2월)</div>
-              <div className="text-sm font-extrabold text-blue-400">17:20 ~ 17:50</div>
-              <div className="text-[11px] text-stone-400 mt-1">통유리창 따뜻한 온기</div>
+              <div className="text-sm sm:text-base font-bold text-white mb-1.5 break-keep leading-snug">❄️ 겨울철 <span className="text-xs font-normal text-stone-300 sm:text-sm">(12월~2월)</span></div>
+              <div className="text-xs sm:text-sm font-semibold text-blue-400 tracking-wide">17:20 ~ 17:50</div>
+              <div className="text-[11px] text-stone-400 mt-1 break-keep leading-tight">통유리창 따뜻한 온기</div>
             </div>
           </div>
         </div>
