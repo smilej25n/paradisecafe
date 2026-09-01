@@ -93,7 +93,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ initialCategory = 'all
             <Utensils className="w-3.5 h-3.5" />
             <span>Paradise Delicious Menu</span>
           </div>
-          <h2 className="text-[1.15rem] xs:text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tighter sm:tracking-tight font-serif whitespace-nowrap">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight font-serif whitespace-nowrap">
             정성 가득한 <span className="text-amber-400">카페 파라다이스 메뉴</span>
           </h2>
           <p className="text-stone-300 text-xs sm:text-sm md:text-base mt-2">

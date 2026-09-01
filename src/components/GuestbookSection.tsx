@@ -47,7 +47,7 @@ export const GuestbookSection: React.FC = () => {
             <MessageSquare className="w-3.5 h-3.5" />
             <span>Visitor Stories & Warm Memories</span>
           </div>
-          <h2 className="text-[1.125rem] xs:text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tighter sm:tracking-tight font-serif whitespace-nowrap">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight font-serif whitespace-nowrap">
             여행객들이 전하는 <span className="text-amber-400">파라다이스 이야기</span>
           </h2>
           <p className="text-stone-300 text-sm sm:text-base mt-2 break-keep">
