@@ -80,7 +80,7 @@ export const LocationSection: React.FC = () => {
             <MapPin className="w-3.5 h-3.5" />
             <span>Location & Contact</span>
           </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight font-serif whitespace-nowrap">
+          <h2 className="text-xl sm:text-3xl md:text-[40px] font-extrabold text-white tracking-tight font-serif whitespace-nowrap">
             카페 파라다이스 <span className="text-amber-400">오시는 길 & 매장 정보</span>
           </h2>
           <p className="text-stone-300 text-sm sm:text-base mt-2">

@@ -92,7 +92,7 @@ export const KeyStrengths: React.FC<KeyStrengthsProps> = ({ onNavigateMenu }) =>
             <Sparkles className="w-3.5 h-3.5" />
             <span>Why Paradise Cafe</span>
           </div>
-          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight font-serif">
+          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-[40px] font-extrabold text-white tracking-tight font-serif leading-tight sm:leading-snug">
             여행객들이 다시 찾아오는 <br />
             <span className="text-amber-400">카페 파라다이스만의 4가지 매력</span>
           </h2>
