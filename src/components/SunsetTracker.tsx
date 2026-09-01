@@ -41,9 +41,9 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
     } else if (diff > 0) {
       return {
         phase: 'golden',
-        title: '✨ 골든 아워 진입 중! 일몰 카운트다운',
+        title: '✨ 골든 아워 진입! 일몰 카운트다운',
         badge: '인생샷 황금시간',
-        desc: `일몰 시작까지 약 ${diff}분 남았습니다! 지금 자갈마당 파라솔로 나가보세요.`,
+        desc: `일몰 시작까지 약 ${diff}분 남았습니다! 은은한 파도 소리와 붉은 노을빛이 번지는 야외 테라스와 자갈마당으로 나가보세요.`,
         tip: '하늘이 붉게 물드는 황금 시간입니다. 옥상 뷰를 추천합니다.',
       };
     } else if (diff > -60) {
@@ -101,11 +101,11 @@ export const SunsetTracker: React.FC<{ onOpenMusic: () => void }> = ({ onOpenMus
               </span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+            <h3 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight sm:leading-snug tracking-tight">
               {status.title}
             </h3>
 
-            <p className="text-stone-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-stone-300 text-xs sm:text-base leading-relaxed break-keep">
               {status.desc}
             </p>
 
